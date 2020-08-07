@@ -1,0 +1,13 @@
+{
+  "name": "proffy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "author": "Ricardo Dalcin <ricardo.dalcinh@gmail.com>",
+  "license": "MIT"
+}
