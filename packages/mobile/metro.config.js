@@ -1,3 +1,3 @@
-import { createMetroConfiguration } from 'expo-yarn-workspaces'
+const { createMetroConfiguration } = require('expo-yarn-workspaces')
 
 module.exports = createMetroConfiguration(__dirname)
