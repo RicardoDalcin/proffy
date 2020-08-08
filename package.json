@@ -9,5 +9,9 @@
     ]
   },
   "author": "Ricardo Dalcin <ricardo.dalcinh@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.7",
+    "@proffy/eslint-config": "*"
+  }
 }

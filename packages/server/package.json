@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@proffy/server",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,6 @@
     "@adonisjs/assembler": "^2.0.0",
     "adonis-preset-ts": "^1.0.4",
     "pino-pretty": "^4.1.0",
-    "typescript": "^3.9.7",
     "youch": "^2.0.10",
     "youch-terminal": "^1.0.0"
   },
