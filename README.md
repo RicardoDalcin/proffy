@@ -129,7 +129,7 @@ Distributed under the MIT License. See `LICENSE` for more information. -->
 
 <!-- CONTACT -->
 
-## Contact
+## Contato
 
 <!-- Ricardo Dalcin - [@your_twitter](https://twitter.com/your_username) - email@example.com -->
 
