@@ -5,8 +5,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*",
-      "packages/shared/*"
+      "packages/*"
     ]
   },
   "author": "Ricardo Dalcin <ricardo.dalcinh@gmail.com>",

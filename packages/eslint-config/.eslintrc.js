@@ -5,6 +5,8 @@ module.exports = {
     node: true,
     jest: true
   },
+  pnpMode: 'loose',
+  pnpFallbackMode: 'all',
   extends: [
     'plugin:react/recommended',
     'standard',
