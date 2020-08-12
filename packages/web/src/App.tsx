@@ -1,11 +1,14 @@
 import React from 'react'
 
-// import { Container } from './styles';
-import api from '@proffy/axios-config'
+import GlobalStyles from '../assets/styles/global'
 
 const App: React.FC = () => {
-  console.log(api)
-  return <h1>Hello World</h1>
+  return (
+    <>
+      <div>Hello World</div>
+      <GlobalStyles />
+    </>
+  )
 }
 
 export default App
