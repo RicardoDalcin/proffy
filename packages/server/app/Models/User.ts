@@ -5,9 +5,12 @@ import {
   beforeSave,
   BaseModel,
   hasOne,
-  HasOne
+  HasOne,
+  hasMany,
+  HasMany
 } from '@ioc:Adonis/Lucid/Orm'
 import Profile from './Profile'
+import Connection from './Connection'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -33,6 +36,9 @@ export default class User extends BaseModel {
 
   @hasOne(() => Profile)
   public profile: HasOne<typeof Profile>
+
+  @hasMany(() => Connection)
+  public connections: HasMany<typeof Connection>
 
   @beforeSave()
   public static async hashPassword(User: User) {
