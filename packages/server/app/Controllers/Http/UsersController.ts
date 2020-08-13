@@ -1,15 +1,23 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import User from '../../Models/User'
+import Profile from '../../Models/Profile'
 
 export default class UsersController {
-  public async store({ request }) {
+  public async register({ request }) {
     const { name, email, password } = request.post()
 
     const createdUser = await User.create({
       name,
       email,
       password
+    })
+
+    const createdProfile = await Profile.create({
+      avatar: '',
+      whatsapp: '',
+      bio: '',
+      userId: createdUser.id
     })
 
     return createdUser
@@ -25,9 +33,21 @@ export default class UsersController {
     return token.toJSON()
   }
 
-  public async test() {
+  public async index({ params }: HttpContextContract) {
+    const { id } = params
+
+    const userFetched = await User.query()
+      .where('id', id)
+      .preload('profile')
+      .firstOrFail()
+    console.log(userFetched)
     return {
-      hello: 'world'
+      id: userFetched.id,
+      name: userFetched.name,
+      email: userFetched.email,
+      avatar: userFetched.profile.avatar,
+      whatsapp: userFetched.profile.whatsapp,
+      bio: userFetched.profile.bio
     }
   }
 }
