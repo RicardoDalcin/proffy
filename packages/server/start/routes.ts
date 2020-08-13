@@ -9,5 +9,5 @@ Route.get('/classes', 'ClassesController.index').middleware('auth')
 Route.get('/classes/:userId', 'ClassesController.find').middleware('auth')
 Route.post('/classes/:userId', 'ClassesController.store').middleware('auth')
 
-Route.get('/connections', 'ConnectionsController.index').middleware('auth')
+Route.get('/connections', 'ConnectionsController.index')
 Route.post('/connections', 'ConnectionsController.store').middleware('auth')
