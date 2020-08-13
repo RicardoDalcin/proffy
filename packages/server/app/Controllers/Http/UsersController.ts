@@ -33,7 +33,7 @@ export default class UsersController {
     return token.toJSON()
   }
 
-  public async index({ params }: HttpContextContract) {
+  public async find({ params }: HttpContextContract) {
     const { id } = params
 
     const userFetched = await User.query()
