@@ -12,9 +12,9 @@
     Uma plataforma que ajuda professores e alunos a se conectarem
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Reportar Bug</a>
+    <a href="https://github.com/RicardoDalcin/proffy/issues">Reportar Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Solicitar Funcionalidade</a>
+    <a href="https://github.com/RicardoDalcin/proffy/issues">Solicitar Funcionalidade</a>
   </p>
 </p>
 
@@ -129,7 +129,7 @@ Distributed under the MIT License. See `LICENSE` for more information. -->
 
 <!-- CONTACT -->
 
-## Contact
+## Contato
 
 <!-- Ricardo Dalcin - [@your_twitter](https://twitter.com/your_username) - email@example.com -->
 
