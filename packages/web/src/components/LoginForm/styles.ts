@@ -45,10 +45,15 @@ export const Container = styled.div`
     border-radius: 0.8rem;
     margin-top: 2.4rem;
     cursor: pointer;
+    transition: 0.8s all ease;
   }
 
   .login-button:hover {
     background: ${theme.secondaryDark};
+  }
+
+  .login-button:focus {
+    background: ${theme.primary};
   }
 
   .login-button:disabled {

@@ -41,6 +41,7 @@ export const Container = styled.div`
     background-color: #fff;
     border-radius: 0.8rem;
     display: block;
+    transition: 0.4s all ease;
   }
 
   .checkbox-block input:checked ~ .checkbox-checkmark {
