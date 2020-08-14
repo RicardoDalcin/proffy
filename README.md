@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/RicardoDalcin/proffy">
-    <img src="https://raw.github.com/RicardoDalcin/proffy/images/logo.svg" alt="Logo" width="120" height="60">
+    <img src="https://github.com/RicardoDalcin/proffy/blob/master/images/logo.svg" alt="Logo" width="120" height="60">
   </a>
 
   <h3 align="center">Proffy - NLW #2</h3>
@@ -145,4 +145,4 @@ Link do projeto: [https://github.com/RicardoDalcin/proffy](https://github.com/Ri
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/RicardoDalcin
-[product-screenshot]: https://raw.github.com/RicardoDalcin/proffy/images/landing_image.jpg
+[product-screenshot]: https://github.com/RicardoDalcin/proffy/blob/master/images/landing_image.jpg
