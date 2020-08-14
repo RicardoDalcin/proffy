@@ -11,10 +11,13 @@ export default {
   textInPrimary: '#d4c2ff',
   textTitle: '#32264d',
   textComplement: '#9c98a6',
+  textInput: '#C1BCCC',
   textBase: '#6a6180',
   lineInWhite: '#e6e6f0',
   inputBackground: '#f8f8fc',
   buttonText: '#ffffff',
+  buttonDisabled: '#DCDCE5',
+  buttonDisabledText: '#9c98a6',
   boxBase: '#ffffff',
   boxFooter: '#fafafc'
 }

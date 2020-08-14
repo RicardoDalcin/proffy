@@ -1,56 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 
-import logoImg from '../../assets/images/logo.svg'
-import landingImg from '../../assets/images/landing.svg'
-import studyIcon from '../../assets/images/icons/study.svg'
-import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
-import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
-
-import api from '@proffy/axios-config'
 import { Container } from './styles'
 
+import logoImg from '../../assets/images/logo.svg'
+import bgImg from '../../assets/images/success-background.svg'
+import LoginForm from '../../components/LoginForm'
+
 function Landing() {
-  const [totalConnections, setTotalConnections] = useState(0)
-
-  useEffect(() => {
-    api
-      .get('/connections')
-      .then(res => {
-        setTotalConnections(res.data.total)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
-
   return (
     <Container>
       <div id="page-landing">
         <div id="page-landing-content" className="container">
           <div className="logo-container">
-            <img src={logoImg} alt="Proffy" />
-            <h2>Sua plataforma de estudos online.</h2>
+            <img src={bgImg} alt="Background" className="background-shapes" />
+            <div className="logo-wrapper">
+              <img src={logoImg} alt="Proffy" className="logo-image" />
+              <h2>Sua plataforma de estudos online.</h2>
+            </div>
           </div>
-          <img
-            src={landingImg}
-            alt="Plataforma de estudos"
-            className="hero-image"
-          />
-          <div className="buttons-container">
-            <Link to="/study" className="study">
-              <img src={studyIcon} alt="Estudar" />
-              Estudar
-            </Link>
-            <Link to="/teach" className="give-classes">
-              <img src={giveClassesIcon} alt="Estudar" />
-              Dar aulas
-            </Link>
+
+          <div className="login-container">
+            <LoginForm />
           </div>
-          <span className="total-connections">
-            Total de {totalConnections} conexões já realizadas{' '}
-            <img src={purpleHeartIcon} alt="Coração roxo" />
-          </span>
         </div>
       </div>
     </Container>

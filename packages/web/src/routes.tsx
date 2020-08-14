@@ -6,8 +6,6 @@ function Routes() {
   return (
     <BrowserRouter>
       <Route exact path="/" component={Landing} />
-      <Route path="/study" component={Landing} />
-      <Route path="/teach" component={Landing} />
     </BrowserRouter>
   )
 }
