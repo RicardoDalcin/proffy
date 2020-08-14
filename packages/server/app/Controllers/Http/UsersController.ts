@@ -30,7 +30,15 @@ export default class UsersController {
     const token = await auth.use('api').attempt(email, password, {
       expiresIn: '15 days'
     })
-    return token.toJSON()
+
+    const user = await User.findByOrFail('email', email)
+
+    return {
+      ...token.toJSON(),
+      id: user.id,
+      name: user.name,
+      email: user.email
+    }
   }
 
   public async find({ params }: HttpContextContract) {
