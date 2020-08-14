@@ -1,27 +1,24 @@
-import React, { useState, FormEvent } from 'react'
+import React, { useState, FormEvent, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Container } from './styles'
 
 import FloatingInput from '../FloatingInput'
 import Checkbox from '../Checkbox'
-import api from '@proffy/axios-config'
+import AuthContext from '../../contexts/auth'
 
 const LoginForm = () => {
+  const { signIn } = useContext(AuthContext)
+
   const [email, setEmail] = useState('')
   const [password, setPaswword] = useState('')
   const [remember, setRemember] = useState(false)
 
-  const submitLogin = (e: FormEvent) => {
+  const submitLogin = async (e: FormEvent) => {
     e.preventDefault()
 
     if (email && password) {
-      api
-        .post('login', { email, password })
-        .then(res => {
-          console.log(res)
-        })
-        .catch(err => {})
+      signIn(email, password)
     }
   }
 

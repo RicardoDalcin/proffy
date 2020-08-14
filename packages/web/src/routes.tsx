@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Landing from './pages/Landing'
+import AppRoutes from './app.routes'
+import AuthRoutes from './auth.routes'
+import { useContext } from 'react'
+import AuthContext from './contexts/auth'
 
 function Routes() {
-  return (
-    <BrowserRouter>
-      <Route exact path="/" component={Landing} />
-    </BrowserRouter>
-  )
+  const { signed } = useContext(AuthContext)
+
+  return <>{signed ? <AppRoutes /> : <AuthRoutes />}</>
 }
 
 export default Routes
