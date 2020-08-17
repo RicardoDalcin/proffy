@@ -40,7 +40,7 @@ const LoginForm = () => {
           <FloatingInput
             name="password"
             label="Senha"
-            type="password"
+            password
             value={password}
             bottom
             onChange={e => setPaswword(e.target.value)}

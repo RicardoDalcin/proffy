@@ -60,4 +60,22 @@ export const Container = styled.div`
     top: 0.8rem;
     font-size: 1.4rem;
   }
+
+  .password-visibility-icon,
+  .password-visibility-icon-slash {
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1.8rem;
+    top: 2.4rem;
+    cursor: pointer;
+  }
+
+  .password-visibility-icon {
+    color: ${theme.textInput};
+  }
+
+  .password-visibility-icon-slash {
+    color: ${theme.primary};
+    right: 1.6rem;
+  }
 `

@@ -1,6 +1,9 @@
 import React, { InputHTMLAttributes } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
 import { Container } from './styles'
+import { useState } from 'react'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string
@@ -8,6 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string
   top?: boolean
   bottom?: boolean
+  password?: boolean
 }
 
 const FloatingInput: React.FC<InputProps> = ({
@@ -16,8 +20,11 @@ const FloatingInput: React.FC<InputProps> = ({
   value,
   top,
   bottom,
+  password,
   ...rest
 }) => {
+  const [hidden, setHidden] = useState(true)
+
   const styleTopOrBottom = () => {
     if (top) {
       return 'floting-input-top'
@@ -37,11 +44,23 @@ const FloatingInput: React.FC<InputProps> = ({
           }
           value={value}
           id={name}
+          type={hidden ? 'password' : 'text'}
           {...rest}
         />
         <label className={value !== '' ? 'floating-label' : ''} htmlFor={name}>
           {label}
         </label>
+        {password && (
+          <FontAwesomeIcon
+            icon={hidden ? faEye : faEyeSlash}
+            className={
+              hidden
+                ? 'password-visibility-icon'
+                : 'password-visibility-icon-slash'
+            }
+            onClick={() => setHidden(!hidden)}
+          />
+        )}
       </div>
     </Container>
   )

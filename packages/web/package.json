@@ -8,6 +8,10 @@
     "start": "webpack-dev-server --mode development"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@proffy/axios-config": "*",
     "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.8",
