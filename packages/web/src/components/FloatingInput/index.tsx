@@ -38,15 +38,26 @@ const FloatingInput: React.FC<InputProps> = ({
   return (
     <Container>
       <div className="floating-input-block">
-        <input
-          className={
-            top ? 'floating-input-top' : bottom ? 'floating-input-bottom' : ''
-          }
-          value={value}
-          id={name}
-          type={hidden ? 'password' : 'text'}
-          {...rest}
-        />
+        {password ? (
+          <input
+            className={
+              top ? 'floating-input-top' : bottom ? 'floating-input-bottom' : ''
+            }
+            value={value}
+            id={name}
+            type={hidden ? 'password' : 'text'}
+            {...rest}
+          />
+        ) : (
+          <input
+            className={
+              top ? 'floating-input-top' : bottom ? 'floating-input-bottom' : ''
+            }
+            value={value}
+            id={name}
+            {...rest}
+          />
+        )}
         <label className={value !== '' ? 'floating-label' : ''} htmlFor={name}>
           {label}
         </label>
