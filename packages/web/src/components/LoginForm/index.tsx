@@ -42,6 +42,7 @@ const LoginForm = () => {
             label="Senha"
             type="password"
             value={password}
+            bottom
             onChange={e => setPaswword(e.target.value)}
           />
 

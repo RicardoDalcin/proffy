@@ -26,3 +26,14 @@ export function signIn(email, password): Promise<Response> {
     }
   })
 }
+
+export function signUp(name, email, password) {
+  return new Promise(async resolve => {
+    try {
+      const response = await api.post('register', { name, email, password })
+      resolve({})
+    } catch (err) {
+      console.log(err)
+    }
+  })
+}

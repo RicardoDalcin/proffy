@@ -7,6 +7,12 @@ interface AuthContextData {
   signed: boolean
   user: object | null
   signIn(email: string, password: string): Promise<void>
+  signUp(
+    name: string,
+    lastName: string,
+    email: string,
+    password: string
+  ): Promise<void>
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData)
@@ -35,8 +41,14 @@ export const AuthProvider: React.FC = ({ children }) => {
     setUser(user)
   }
 
+  async function signUp(name, lastName, email, password) {
+    const compoundName = `${name} ${lastName}`
+
+    const response = await auth.signUp(compoundName, email, password)
+  }
+
   return (
-    <AuthContext.Provider value={{ signed: !!user, user, signIn }}>
+    <AuthContext.Provider value={{ signed: !!user, user, signIn, signUp }}>
       {children}
     </AuthContext.Provider>
   )

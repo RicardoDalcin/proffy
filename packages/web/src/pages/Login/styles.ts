@@ -8,7 +8,7 @@ export const Container = styled.div`
   color: ${theme.textInPrimary};
   background: ${theme.primary};
 
-  #page-landing-content {
+  #page-login-content {
     width: 100vw;
     max-width: 100vw;
   }
@@ -53,8 +53,44 @@ export const Container = styled.div`
     z-index: 10;
   }
 
+  .register-container {
+    max-width: 650px;
+    padding: 0 3.2rem;
+    margin: 3.2rem auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .register-container .register {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register-container .register span {
+    color: ${theme.textBase};
+  }
+
+  .register-container .register a {
+    color: ${theme.primary};
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .register-container .register a:hover {
+    text-decoration: underline;
+  }
+
+  .register-container .free-icon {
+    color: ${theme.textInput};
+    font-size: 1.4rem;
+  }
+
+  .register-container .free-icon img {
+    margin-left: 0.4rem;
+  }
+
   @media (min-width: 1100px) {
-    #page-landing-content {
+    #page-login-content {
       display: flex;
       flex-direction: row;
       max-width: 100vw;
@@ -84,6 +120,12 @@ export const Container = styled.div`
       font-size: 2.4rem;
       line-height: 2.4rem;
       max-width: 300px;
+    }
+
+    .register-container {
+      width: 80%;
+      max-width: 500px;
+      margin-top: 4rem;
     }
   }
 `
