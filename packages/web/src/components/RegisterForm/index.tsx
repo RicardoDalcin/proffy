@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { Container } from './styles'
 
@@ -8,6 +8,7 @@ import FloatingInput from '../FloatingInput'
 import AuthContext from '../../contexts/auth'
 
 const RegisterForm = () => {
+  const history = useHistory()
   const { signUp } = useContext(AuthContext)
 
   const [name, setName] = useState('')
@@ -20,6 +21,8 @@ const RegisterForm = () => {
 
     if (name && lastName && email && password) {
       signUp(name, lastName, email, password)
+
+      history.push('/register-confirmation')
     }
   }
 
