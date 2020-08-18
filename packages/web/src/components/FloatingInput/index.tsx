@@ -1,6 +1,7 @@
 import React, { InputHTMLAttributes } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 import { Container } from './styles'
 import { useState } from 'react'
@@ -12,6 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   top?: boolean
   bottom?: boolean
   password?: boolean
+  emailValidation?: boolean | null
 }
 
 const FloatingInput: React.FC<InputProps> = ({
@@ -21,6 +23,7 @@ const FloatingInput: React.FC<InputProps> = ({
   top,
   bottom,
   password,
+  emailValidation,
   ...rest
 }) => {
   const [hidden, setHidden] = useState(true)
@@ -71,6 +74,12 @@ const FloatingInput: React.FC<InputProps> = ({
             }
             onClick={() => setHidden(!hidden)}
           />
+        )}
+        {emailValidation === false && (
+          <FontAwesomeIcon icon={faTimes} className="validation-icon-cross" />
+        )}
+        {emailValidation === true && (
+          <FontAwesomeIcon icon={faCheck} className="validation-icon-check" />
         )}
       </div>
     </Container>

@@ -62,7 +62,9 @@ export const Container = styled.div`
   }
 
   .password-visibility-icon,
-  .password-visibility-icon-slash {
+  .password-visibility-icon-slash,
+  .validation-icon-cross,
+  .validation-icon-check {
     font-size: 1.8rem;
     position: absolute;
     right: 1.8rem;
@@ -77,5 +79,13 @@ export const Container = styled.div`
   .password-visibility-icon-slash {
     color: ${theme.primary};
     right: 1.6rem;
+  }
+
+  .validation-icon-check {
+    color: ${theme.secondary};
+  }
+
+  .validation-icon-cross {
+    color: #ff335c;
   }
 `

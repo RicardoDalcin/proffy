@@ -6,6 +6,7 @@ import { Container } from './styles'
 import backIcon from '../../assets/images/icons/back.svg'
 import FloatingInput from '../FloatingInput'
 import AuthContext from '../../contexts/auth'
+import api from '../../services/api'
 
 const RegisterForm = () => {
   const history = useHistory()
@@ -15,13 +16,22 @@ const RegisterForm = () => {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPaswword] = useState('')
+  const [emailValidation, setEmailValidation] = useState(null)
+
+  const handleValidateEmail = async (email: string) => {
+    if (email.includes('@') && email.includes('.')) {
+      const response = await api.post('users/validate', { email })
+      setEmailValidation(response.data.validation)
+    } else {
+      setEmailValidation(null)
+    }
+  }
 
   const submitRegister = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (name && lastName && email && password) {
+    if (name && lastName && email && password && emailValidation) {
       signUp(name, lastName, email, password)
-
       history.push('/register-confirmation')
     }
   }
@@ -59,7 +69,9 @@ const RegisterForm = () => {
             label="E-mail"
             value={email}
             type="email"
+            emailValidation={emailValidation}
             onChange={e => setEmail(e.target.value)}
+            onBlur={e => handleValidateEmail(e.target.value)}
           />
 
           <FloatingInput
