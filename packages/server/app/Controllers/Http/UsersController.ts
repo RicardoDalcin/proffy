@@ -58,4 +58,16 @@ export default class UsersController {
       bio: userFetched.profile.bio
     }
   }
+
+  public async validateEmail({ request }: HttpContextContract) {
+    const { email } = request.post()
+
+    const user = await User.findBy('email', email)
+
+    if (user) {
+      return { validation: false }
+    } else {
+      return { validation: true }
+    }
+  }
 }

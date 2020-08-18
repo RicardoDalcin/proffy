@@ -4,6 +4,7 @@ Route.post('/register', 'UsersController.register')
 Route.post('/login', 'UsersController.login')
 
 Route.get('/users/:id', 'UsersController.find').middleware('auth')
+Route.post('/users/validate', 'UsersController.validateEmail')
 
 Route.get('/classes', 'ClassesController.index').middleware('auth')
 Route.get('/classes/:userId', 'ClassesController.find').middleware('auth')
