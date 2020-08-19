@@ -1,16 +1,11 @@
 import React from 'react'
 import { Route, BrowserRouter } from 'react-router-dom'
+import Landing from './pages/Landing'
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <Route
-        exact
-        path="/"
-        component={() => {
-          return <div>hello</div>
-        }}
-      />
+      <Route exact path="/" component={Landing} />
     </BrowserRouter>
   )
 }
