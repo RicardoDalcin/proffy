@@ -3,9 +3,9 @@ import * as auth from '../services/auth'
 import api from '@proffy/axios-config'
 import { useEffect } from 'react'
 
-interface AuthContextData {
+export interface AuthContextData {
   signed: boolean
-  user: object | null
+  user: {} | null
   signIn(email: string, password: string): Promise<void>
   signUp(
     name: string,
@@ -13,6 +13,7 @@ interface AuthContextData {
     email: string,
     password: string
   ): Promise<void>
+  signOut(): Promise<void>
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData)
@@ -47,8 +48,18 @@ export const AuthProvider: React.FC = ({ children }) => {
     const response = await auth.signUp(compoundName, email, password)
   }
 
+  async function signOut() {
+    const response = await auth.signOut()
+
+    localStorage.removeItem('@Proffy:token')
+    localStorage.removeItem('@Proffy:user')
+    setUser(null)
+  }
+
   return (
-    <AuthContext.Provider value={{ signed: !!user, user, signIn, signUp }}>
+    <AuthContext.Provider
+      value={{ signed: !!user, user, signIn, signUp, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   )

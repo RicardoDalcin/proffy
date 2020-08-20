@@ -11,14 +11,20 @@ import { Container } from './styles'
 import api from '../../services/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react'
+import AuthContext, { AuthContextData } from '../../contexts/auth'
 
 function Landing() {
   const [totalConnections, setTotalConnections] = useState(0)
+  const { user, signOut } = useContext(AuthContext)
 
   useEffect(() => {
-    api.get('/connections').then(res => {
-      setTotalConnections(res.data.total)
-    })
+    api
+      .get('/connections')
+      .then(res => {
+        setTotalConnections(res.data.total)
+      })
+      .catch(err => console.log(err))
   }, [])
 
   return (
@@ -32,9 +38,10 @@ function Landing() {
                   src="https://avatars0.githubusercontent.com/u/58394781?s=460&u=e083b958ef3a7e128dedc5a94a4f040d8924296e&v=4"
                   className="user-avatar"
                 />
-                <div className="user-name">Ricardo Dalcin</div>
+                {/* @ts-ignore */}
+                <div className="user-name">{user.name}</div>
               </div>
-              <button className="logout-button">
+              <button className="logout-button" onClick={signOut}>
                 <FontAwesomeIcon icon={faPowerOff} />
               </button>
             </div>

@@ -37,3 +37,18 @@ export function signUp(name, email, password) {
     }
   })
 }
+
+export function signOut() {
+  return new Promise(async resolve => {
+    try {
+      const response = await api.post('logout')
+      api.interceptors.request.use(config => {
+        config.headers.Authorization = null
+        return config
+      })
+      resolve({})
+    } catch (err) {
+      console.log(err)
+    }
+  })
+}
