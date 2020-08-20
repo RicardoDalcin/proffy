@@ -41,6 +41,12 @@ export default class UsersController {
     }
   }
 
+  public async logout({ auth }: HttpContextContract) {
+    await auth.use('api').logout()
+
+    return {}
+  }
+
   public async find({ params }: HttpContextContract) {
     const { id } = params
 
