@@ -12,6 +12,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string
   top?: boolean
   bottom?: boolean
+  unique?: boolean
   password?: boolean
   emailValidation?: boolean | null
 }
@@ -22,21 +23,12 @@ const FloatingInput: React.FC<InputProps> = ({
   value,
   top,
   bottom,
+  unique,
   password,
   emailValidation,
   ...rest
 }) => {
   const [hidden, setHidden] = useState(true)
-
-  const styleTopOrBottom = () => {
-    if (top) {
-      return 'floting-input-top'
-    } else if (bottom) {
-      return 'floating-input-bottom'
-    } else {
-      return ''
-    }
-  }
 
   return (
     <Container>
@@ -44,7 +36,13 @@ const FloatingInput: React.FC<InputProps> = ({
         {password ? (
           <input
             className={
-              top ? 'floating-input-top' : bottom ? 'floating-input-bottom' : ''
+              top
+                ? 'floating-input-top'
+                : bottom
+                ? 'floating-input-bottom'
+                : unique
+                ? 'floating-input-unique'
+                : ''
             }
             value={value}
             id={name}
@@ -54,7 +52,13 @@ const FloatingInput: React.FC<InputProps> = ({
         ) : (
           <input
             className={
-              top ? 'floating-input-top' : bottom ? 'floating-input-bottom' : ''
+              top
+                ? 'floating-input-top'
+                : bottom
+                ? 'floating-input-bottom'
+                : unique
+                ? 'floating-input-unique'
+                : ''
             }
             value={value}
             id={name}

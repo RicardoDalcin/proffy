@@ -25,8 +25,6 @@ export const AuthProvider: React.FC = ({ children }) => {
     const storagedUser = localStorage.getItem('@Proffy:user')
     const storagedToken = localStorage.getItem('@Proffy:token')
 
-    console.log(storagedToken)
-
     if (storagedUser && storagedToken) {
       setUser(JSON.parse(storagedUser))
     }

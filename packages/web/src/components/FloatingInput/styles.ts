@@ -26,6 +26,10 @@ export const Container = styled.div`
     border-radius: 0 0 0.8rem 0.8rem;
   }
 
+  .floating-input-unique {
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+  }
+
   .floating-input-block::before {
     width: 2px;
     height: 0px;

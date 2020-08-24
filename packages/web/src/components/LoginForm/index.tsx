@@ -53,7 +53,7 @@ const LoginForm = () => {
               checked={remember}
               onChange={() => setRemember(!remember)}
             />
-            <Link to="/" className="forgot-password">
+            <Link to="/forgot-password" className="forgot-password">
               Esqueci minha senha
             </Link>
           </div>

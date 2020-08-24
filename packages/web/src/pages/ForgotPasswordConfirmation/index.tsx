@@ -8,7 +8,7 @@ import { Container } from './styles'
 import bgImg from '../../assets/images/success-background.svg'
 import bgVerticalImg from '../../assets/images/background-vertical.svg'
 
-function RegisterConfirmation() {
+function ForgotPasswordConfirmation() {
   const history = useHistory()
 
   const navigateToLogin = () => {
@@ -34,16 +34,16 @@ function RegisterConfirmation() {
               className="confirmation-check-icon"
             />
           </div>
-          <div className="confirmation-title">Cadastro concluído!</div>
+          <div className="confirmation-title">Redefinição enviada!</div>
           <div className="confirmation-description">
-            Agora você faz parte da plataforma Proffy. Tenha uma ótima
-            experiência.
+            Boa, agora é só checar o e-mail que foi enviado para você redefinir
+            sua senha e aproveitar os estudos.
           </div>
           <button
             className="confirmation-login-button"
             onClick={navigateToLogin}
           >
-            Fazer login
+            Voltar ao login
           </button>
         </div>
       </div>
@@ -51,4 +51,4 @@ function RegisterConfirmation() {
   )
 }
 
-export default RegisterConfirmation
+export default ForgotPasswordConfirmation
